@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -2178,14 +2178,14 @@ TextureImporter:
       chicken_18: -404206184
       chicken_87: -1389571880
       chicken_83: 623955210
-      chicken_57: -1411268411
       chicken_75: -39862145
-      chicken_74: 1445734668
+      chicken_57: -1411268411
       chicken_39: -520419638
       chicken_19: -1961792092
       chicken_72: 1693886375
       chicken_91: 734860445
       chicken_15: -1891183041
+      chicken_74: 1445734668
       chicken_86: 553956511
       chicken_6: -1117928321
       chicken_36: -259321950
