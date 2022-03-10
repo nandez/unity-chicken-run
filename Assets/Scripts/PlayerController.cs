@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -38,10 +36,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.CompareTag("Fruit"))
+        if (col.gameObject.CompareTag("Fruit"))
         {
             gameManager.OnFruitCollected();
             col.gameObject.SetActive(false);
+        }
+        else if (col.gameObject.CompareTag("Home"))
+        {
+            gameManager.OnHomeZoneEntered();
+        }
+        else if (col.gameObject.CompareTag("Enemy"))
+        {
+            gameManager.OnPlayerDeath();
         }
     }
 }

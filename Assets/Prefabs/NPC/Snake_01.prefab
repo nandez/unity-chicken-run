@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake_01
       objectReference: {fileID: 0}
+    - target: {fileID: 3816914376163584338, guid: 1635abce645134d4da4d3892db99f543, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3816914376163584339, guid: 1635abce645134d4da4d3892db99f543, type: 3}
       propertyPath: m_Controller
       value: 
