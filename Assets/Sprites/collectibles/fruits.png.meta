@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -4966,8 +4966,8 @@ TextureImporter:
       fruits_21: -1853543237
       fruits_35: -59710852
       fruits_83: -105891529
-      fruits_63: -421511273
       fruits_108: 209948890
+      fruits_63: -421511273
       fruits_158: -1482013895
       fruits_8: 107562866
       fruits_153: 1175104678
@@ -5073,8 +5073,8 @@ TextureImporter:
       fruits_171: -1987151671
       fruits_81: -662978282
       fruits_76: 317613624
-      fruits_169: -73611913
       fruits_120: 1199514916
+      fruits_169: -73611913
       fruits_152: 1096743005
       fruits_6: -1730527346
       fruits_140: -1496049000
@@ -5094,8 +5094,8 @@ TextureImporter:
       fruits_41: 632985615
       fruits_28: 1642704911
       fruits_77: -723770628
-      fruits_89: -1388615861
       fruits_208: -248048830
+      fruits_89: -1388615861
       fruits_199: -1190383716
       fruits_122: 211480984
       fruits_181: 756145206

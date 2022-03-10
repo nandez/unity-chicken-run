@@ -10,10 +10,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidBody;
     private Vector2 movement;
 
+    private GameManager gameManager;
+
     private void Start()
     {
         playerAnimator = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
+
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -30,5 +34,14 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         playerRigidBody.MovePosition(playerRigidBody.position + movementSpeed * Time.fixedDeltaTime * movement);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Fruit"))
+        {
+            gameManager.OnFruitCollected();
+            col.gameObject.SetActive(false);
+        }
     }
 }
