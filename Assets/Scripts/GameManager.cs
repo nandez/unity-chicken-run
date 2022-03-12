@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDeath()
     {
-        messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("Oh snap! Game Over!");
+        messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("OH SNAP! GAME OVER!");
         messageUI.SetActive(true);
 
         Time.timeScale = 0;
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         if (collectedFruits == totalFruits)
         {
-            messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("Well done! Welcome home!");
+            messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("WELL DONE! WELCOME HOME!");
             messageUI.SetActive(true);
 
             Time.timeScale = 0;
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("You need to collect all fruits!");
+            messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("YOU NEED TO COLLECT ALL FRUITS!");
             messageUI.SetActive(true);
 
             Time.timeScale = 0;
