@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnimator;
     private Rigidbody2D playerRigidBody;
     private Vector2 movement;
+    private AudioSource playerAudioSource;
+    private bool canPlayAudio = false;
 
     private GameManager gameManager;
 
@@ -14,6 +17,8 @@ public class PlayerController : MonoBehaviour
     {
         playerAnimator = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
+        playerAudioSource = GetComponent<AudioSource>();
+        StartCoroutine(EnableAudio());
 
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -27,11 +32,21 @@ public class PlayerController : MonoBehaviour
         // Updates the animator variables for movement..
         playerAnimator.SetFloat("Horizontal", movement.x);
         playerAnimator.SetFloat("Vertical", movement.y);
+
+
+        if (!playerAudioSource.isPlaying && canPlayAudio)
+        {
+            canPlayAudio = false;
+            playerAudioSource.Play();
+            StartCoroutine(EnableAudio());
+        }
+            
     }
 
     private void FixedUpdate()
     {
         playerRigidBody.MovePosition(playerRigidBody.position + movementSpeed * Time.fixedDeltaTime * movement);
+
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -49,5 +64,11 @@ public class PlayerController : MonoBehaviour
         {
             gameManager.OnPlayerDeath();
         }
+    }
+
+    private IEnumerator EnableAudio()
+    {
+        yield return new WaitForSeconds(10);
+        canPlayAudio = true;
     }
 }

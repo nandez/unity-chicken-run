@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Kids Magazine SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1898234582
   material: {fileID: 8466114740513054038}
-  materialHashCode: 0
+  materialHashCode: 1061820214
   m_Version: 1.1.0
   m_SourceFontFileGUID: 8f108648c401aca43b76974515845e02
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 8f108648c401aca43b76974515845e02, type: 3}
@@ -85,7 +85,7 @@ MonoBehaviour:
     m_SubscriptSize: 0.5
     m_UnderlineOffset: -7.271484
     m_UnderlineThickness: 3.7353513
-    m_StrikethroughOffset: 0
+    m_StrikethroughOffset: 22.8
     m_StrikethroughThickness: 3.7353513
     m_TabWidth: 29
   m_GlyphTable:
@@ -2474,12 +2474,12 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.473
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

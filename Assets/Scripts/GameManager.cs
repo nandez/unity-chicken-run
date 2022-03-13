@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,11 +9,19 @@ public class GameManager : MonoBehaviour
     public TMPro.TMP_Text txtFruits;
     public GameObject messageUI;
 
+    public AudioClip gameOverSfx;
+    public AudioClip levelCompleteSfx;
+
     private int totalFruits = 0;
     private int collectedFruits = 0;
+    private AudioSource audioSrc;
+    private MusicController musicController;
 
     private void Start()
     {
+        audioSrc = GetComponent<AudioSource>();
+        musicController = FindObjectOfType<MusicController>();
+
         totalFruits = GameObject.FindGameObjectsWithTag("Fruit").Length;
         UpdateFruitsText();
 
@@ -37,6 +46,9 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDeath()
     {
+        musicController.PauseMusic();
+        audioSrc.PlayOneShot(gameOverSfx);
+
         messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("OH SNAP! GAME OVER!");
         messageUI.SetActive(true);
 
@@ -48,7 +60,10 @@ public class GameManager : MonoBehaviour
     {
         if (collectedFruits == totalFruits)
         {
-            messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("WELL DONE! WELCOME HOME!");
+            musicController.PauseMusic();
+            audioSrc.PlayOneShot(levelCompleteSfx);
+
+            messageUI.GetComponentInChildren<TMPro.TMP_Text>().SetText("WELL DONE! LEVEL COMPLETED!");
             messageUI.SetActive(true);
 
             Time.timeScale = 0;
@@ -72,7 +87,8 @@ public class GameManager : MonoBehaviour
     protected IEnumerator NavigateToMainMenu()
     {
         yield return new WaitForSecondsRealtime(3);
-        Debug.Log("navigate to menu...");
+        SceneManager.LoadScene("MenuScene");
+        musicController.ResumeMusic();
     }
 
     protected IEnumerator DismmissMessageUI()

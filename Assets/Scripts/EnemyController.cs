@@ -13,10 +13,12 @@ public class EnemyController : MonoBehaviour
     private bool isIdle = false;
 
     private Animator anim;
+    private AudioSource audioSrc;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -29,6 +31,9 @@ public class EnemyController : MonoBehaviour
                 return;
 
             isIdle = false;
+
+            if (Random.value < 0.1)
+                audioSrc.Play();
         }
 
         if (waypoints?.Count > 0)
