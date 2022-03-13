@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public AudioClip gameOverSfx;
     public AudioClip levelCompleteSfx;
+    public AudioClip fuitCollectedSfx;
 
     private int totalFruits = 0;
     private int collectedFruits = 0;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     {
         collectedFruits++;
         UpdateFruitsText();
+        audioSrc.PlayOneShot(fuitCollectedSfx);
     }
 
     public void OnPlayerDeath()

@@ -35366,6 +35366,7 @@ MonoBehaviour:
   messageUI: {fileID: 1483242506}
   gameOverSfx: {fileID: 8300000, guid: f1cb551221b82dc4cb1ec56f07a918bc, type: 3}
   levelCompleteSfx: {fileID: 8300000, guid: 7b1faa4dfcc03514b8a9d8a45d209ce0, type: 3}
+  fuitCollectedSfx: {fileID: 8300000, guid: 5ebad1268a85dd14fb03dac586f7d292, type: 3}
 --- !u!4 &1973297179
 Transform:
   m_ObjectHideFlags: 0
